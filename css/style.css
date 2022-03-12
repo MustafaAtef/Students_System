@@ -1,0 +1,392 @@
+:root {
+    --whiteColor: #f5f5f5;
+    --blackColor: #34495e;
+    --orangeColor: #F05454;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: var(--whiteColor);
+}
+
+header {
+    background-color: var(--blackColor);
+    padding: 15px 60px;
+    color: var(--whiteColor);
+    overflow: hidden;
+}
+
+header .logo {
+    float: left;
+    width: 20%;
+}
+header .logo h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+header .login {
+    float: left;
+    width: 80%;
+    text-align: right;
+}
+
+header .login p {
+    margin: 0;}
+
+header .login div {
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.login input {
+    padding: 3px;
+    border: 1px solid #f4f4f4;
+    border-radius: 4px;
+    box-shadow: 0 0 1px #eee;
+}
+
+.login input:focus {
+    outline: none;
+}
+
+.login button {
+    background: var(--whiteColor);
+    padding: 3px 20px;
+    outline: none;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background: var(--orangeColor);
+    border: 1px solid var(--blackColor);
+    color: var(--whiteColor);
+}
+
+section {
+    margin-top: 20px;
+    padding: 0 60px;
+    text-align: center;
+}
+
+section.students_operations div {
+    display: inline-block;
+}
+section i {
+    margin-right: 3px;
+}
+.add_user,
+.temp-deleted_btn {
+    background-color: var(--blackColor);
+    padding: 10px 20px;
+    color: var(--whiteColor);
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search_user input {
+    padding: 10px 7px;
+    border: 1px solid #8e8e8e;
+    box-shadow: 0 0 1px #eee;
+    border-radius: 4px 0 0 4px;
+    width: 220px;
+}
+
+.search_user input:focus {
+    border: 1px solid var(--blackColor);
+}
+
+.search_user button {
+    background-color: var(--blackColor);
+    padding: 10px 20px;
+    color: var(--whiteColor);
+    border-radius: 0 4px 4px 0;
+    position: relative;
+    margin-right: 10px;
+    left: -6px;
+    border: 1px solid #34495e;
+    cursor: pointer;
+}
+
+.showed_data h5 {
+    margin: 0;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    background: var(--blackColor);
+    padding: 8px;
+    color: var(--whiteColor);
+    border-radius: 4px 0 0 4px;
+    border: 1.2px solid var(--blackColor);
+}
+
+.showed_data select {
+    padding: 6px 17px;
+    border: 1px solid var(--blackColor);
+    border-radius: 0 4px 4px 0;
+    position: relative;
+    left: -4px;
+    height: 36px;
+}
+
+.students_data {
+    margin-top: 30px;
+    position: relative;
+    min-height: 300px;
+}
+
+.students_data table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.students_data table thead {
+    background: var(--blackColor);
+    color: var(--whiteColor);
+}
+
+.students_data table td {
+    border: 1px solid var(--blackColor);
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.students_data table thead td {
+    border: 1px solid var(--whiteColor);
+
+}
+
+.students_data table tbody tr {
+    transition: all .1s ease-in-out;
+}
+
+.students_data table tbody tr:hover {
+    background: #5472904a;
+}
+
+.students_data table .edit,
+.students_data table .delete {
+    color: var(--whiteColor);
+    padding: 4px 18px;
+    border: 1px solid #34495e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.students_data table .edit {background: #0d6efd;}
+.students_data table .delete {background: #dc3545;}
+
+.students_data table button i {
+    font-size: 12px;
+}
+
+.modal-container {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    animation: fade-in .3s;
+}
+.modal-container.show_modal {
+    display: block;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #171717a6;
+    z-index: 2;
+}
+
+.modal-container .modal {
+    position: relative;
+    left: 40%;
+    top: 40%;
+    background: #fff;
+    z-index: 3;
+    display: inline-block;
+    padding: 20px 20px 5px;
+    min-width: 20%;
+    min-height: 15%;
+}
+
+.modal-container .modal h2 {
+    margin: 0;
+    background: var(--blackColor);
+    position: absolute;
+    top: -42px;
+    left: 0;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--whiteColor);
+}
+
+.modal-container .modal .close_modal {
+    position: absolute;
+    top: -26px;
+    right: 20px;
+    color: var(--whiteColor);
+    cursor: pointer;
+}
+
+.user_info div {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.user div:last-child {
+    margin-bottom: 0;
+}
+
+.user_info div:last-child button {
+    display: block;
+    width: 100%;
+    padding: 6px;
+    background: #34495ee3;
+    color: var(--whiteColor);
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+
+.user_info div:last-child button:hover {
+    background: var(--blackColor);
+}
+
+.user_info div label {
+    float: left;
+    width: 40%;
+}
+.user_info div input {
+    float: left;
+    width: 60%;
+}
+.delete_options {
+    padding-bottom: 15px;
+}
+.delete_options button {
+    width: 45%;
+    padding: 6px 0;
+    color: var(--whiteColor);
+    border: 1px solid var(--blackColor);
+    cursor: pointer;
+}
+
+.delete_options button.temp-delete {
+    background: var(--orangeColor);
+    color: var(--blackColor);
+
+}
+
+.delete_options button.perm-delete {
+    background: #dc3545;
+}
+
+.loading-spinner {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    background: var(--blackColor);
+    color: var(--orangeColor);
+    width: 93%;
+    height: 100%;
+}
+
+.loading-spinner i {
+    font-size: 100px;
+    position: relative;
+    top: 35%;
+}
+
+.modal .loading-spinner {
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.modal .loading-spinner i {
+    font-size: 40px;
+    position: relative;
+    top: 30%;
+    left: 43%;
+}
+
+.temporary_deleted_modal .modal {
+    width: 25%;
+}
+.temporary_deleted_modal .modal .std {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.std p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.std button {
+    padding: 3px 10px;
+    border: 1px solid var(--blackColor);
+    color: var(--whiteColor);
+    cursor: pointer;
+}
+
+.std button.std-restore {
+    background: #17a2b8;
+}
+
+.std button.std-delete {
+    background: var(--orangeColor);
+    color: var(--blackColor);
+}
+
+.reset_data {
+    position: relative;
+    left: -9px;
+}
+
+.reset_data button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
+    border: 1px solid var(--blackColor);
+    border-radius: 3px;
+    transition: background-color .2s ease-in-out;
+}
+
+.reset_data button.disabled {
+    background: #34495ed9;
+    cursor: not-allowed;
+}

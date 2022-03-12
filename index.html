@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Student System</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h3>Student APP</h3>
+        </div>
+        <div class="login">
+            <p>Hello, Mostafa</p>
+        </div>
+    </header>
+    <div class="modal-container user_creation_modal">
+        <div class="overlay"></div>
+        <div class="modal">
+            <h2>Create Student</h2>
+            <span class="close_modal"><i class="fas fa-window-close"></i></span>
+            <div class="user_info">
+                <div class="name">
+                    <label for="name">Student Name</label>
+                    <input type="text" id="name" class="stdName">
+                </div>
+                <div class="email">
+                    <label for="email">Student Email</label>
+                    <input type="email" id="email" class="stdEmail">
+                </div>
+                <div class="phone_number">
+                    <label for="phone">Student Phone</label>
+                    <input type="number" id="phone" class="stdPhone">
+                </div>
+                <div class="grade">
+                    <label for="grade">Student Grade</label>
+                    <input type="text" id="grade" class="stdGrade">
+                </div>
+                <div class="save_student">
+                    <button class="save">
+                        <i class="fas fa-save"></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-container user_edit_modal">
+        <div class="overlay"></div>
+        <div class="modal">
+            <h2>Edit Student</h2>
+            <span class="close_modal"><i class="fas fa-window-close"></i></span>
+            <div class="user_info">
+                <div class="name">
+                    <label for="name">Student Name</label>
+                    <input type="text" id="name" class="stdName">
+                </div>
+                <div class="email">
+                    <label for="email">Student Email</label>
+                    <input type="email" id="email" class="stdEmail">
+                </div>
+                <div class="phone_number">
+                    <label for="phone">Student Phone</label>
+                    <input type="number" id="phone" class="stdPhone">
+                </div>
+                <div class="grade">
+                    <label for="grade">Student Grade</label>
+                    <input type="text" id="grade" class="stdGrade">
+                </div>
+                <div class="save_student">
+                    <button class="update">
+                        <i class="fas fa-save"></i>
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container user_delete_modal">
+        <div class="overlay"></div>
+        <div class="modal">
+            <h2>Delete Student</h2>
+            <span class="close_modal"><i class="fas fa-window-close"></i></span>
+            <div class="delete_options">
+                <button class="temp-delete">
+                    <i class="fas fa-trash"></i>
+                    Temporary
+                </button>
+                <button class="perm-delete">
+                    <i class="fas fa-sign"></i>
+                    Permanently
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container temporary_deleted_modal">
+        <div class="overlay"></div>
+        <div class="modal">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <h2>Temporary Deleted Students</h2>
+            <span class="close_modal"><i class="fas fa-window-close"></i></span>
+            <div class="stds">
+
+            </div>
+        </div>
+    </div>
+    <section class="students_operations">
+        <div class="new_user">
+            <button class="add_user">
+                <i class="fas fa-plus"></i>
+                Add Student
+            </button>
+        </div>
+        <div class="temp_deleted_students">
+            <button class="temp-deleted_btn">
+                <i class="far fa-clock"></i>
+                Temporary Deleted
+            </button>
+        </div>
+        <div class="search_user">
+            <input type="text" class="search_student--input">
+            <button type="button"><i class="fas fa-search"></i>Search</button>
+        </div>
+        <div class="reset_data">
+            <button type="button" class="disabled"><i class="fas fa-cog"></i>Reset</button>
+        </div>
+
+    </section>
+    <section class="students_data">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Student Name</td>
+                    <td>Email</td>
+                    <td>Phone Number</td>
+                    <td>Grade</td>
+                    <td>Control</td>
+                </tr>
+            </thead>
+            <tbody class="data">
+
+            </tbody>
+        </table>
+    </section>
+
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

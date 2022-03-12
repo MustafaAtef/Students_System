@@ -1,0 +1,19 @@
+{
+  "name": "students_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/script.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.1",
+    "prettier": "2.5.1"
+  },
+  "dependencies": {
+    "core-js": "^3.19.3",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
